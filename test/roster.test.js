@@ -25,3 +25,32 @@ describe("GET /api/v1/generate_team", () => {
     })
   })
 });
+
+const makeRoster = require('../js/rosterApp.js').makeRoster;
+const salaryCap = 175;
+const playerMax = 100;
+const teamSize = 15;
+
+describe('makeRoster', ()=>{
+  it('should be a function', ()=>{
+    assert.isFunction(makeRoster);
+  });
+  it('should output an array', ()=>{
+    assert.isArray(makeRoster())
+  });
+  it('output should contain totalScores for the teamSize', ()=>{
+    assert.lengthOf(makeRoster(), teamSize)
+  });
+  it('output should contain unique totalScores', ()=>{
+    let scores = makeRoster();
+    scores.sort().forEach((e,i,a)=>assert.notEqual(e, a[i-1]))
+  });
+  it(`sum of output should be below salary cap (${salaryCap})`, ()=>{
+    let playerScores = makeRoster();
+    assert.isAtMost(playerScores.reduce((a,b)=>a+b), salaryCap)
+  });
+  it(`no single player totalScore can be greater than ${playerMax}`, ()=>{
+    let playerScores = makeRoster();
+    playerScores.every(e=>assert.isAtMost(e, 100))
+  });
+});
