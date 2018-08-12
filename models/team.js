@@ -5,10 +5,10 @@ class Team {
     return this.makeRoster().reduce((a, b) => a + b)
   }
  starters() {
-    return [1,2,3,4,5,6,7,8,9,0]
+    return this.addPlayers(this.makeRoster()).slice(0, 10)
   }
  substitutes() {
-    return [1,2,3,4,5]
+    return this.addPlayers(this.makeRoster()).slice(10, 15)
   }
 
   //value fixed for purposes of this assignment and its assumptions

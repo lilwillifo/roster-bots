@@ -7,8 +7,12 @@ function getRandomInt(min, max) {
 class Player {
   constructor(totalScore, teamName) {
     this.name = teamName + totalScore;
-    this.totalScore = totalScore;
-    this.speed = this.totalScore - getRandomInt(0, totalScore);
+    if (totalScore > 100) {
+        this.totalScore = 100;
+    } else {
+        this.totalScore = totalScore;
+    }
+    this.speed = this.totalScore - getRandomInt(0, this.totalScore);
     this.strength = this.totalScore - this.speed - getRandomInt(0, this.totalScore - this.speed);
     this.agility = this.totalScore - this.speed - this.strength;
   }

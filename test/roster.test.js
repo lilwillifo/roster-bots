@@ -71,3 +71,13 @@ describe('addPlayers', ()=>{
     });
   });
 });
+
+describe('Player', ()=>{
+  it('should be an Object', ()=>{
+    assert.isObject(Player.prototype);
+  });
+  it('cannot have totalScore greater than 100', ()=> {
+    let highScorer = new Player(300)
+    assert.equal(highScorer.totalScore, 100)
+  });
+});
