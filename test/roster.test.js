@@ -27,6 +27,7 @@ describe("GET /api/v1/generate_team", () => {
 });
 
 const makeRoster = require('../models/team.js').prototype.makeRoster;
+const addPlayers = require('../models/team.js').prototype.addPlayers;
 const salaryCap = 175;
 const playerMax = 100;
 const teamSize = 15;
@@ -55,8 +56,8 @@ describe('makeRoster', ()=>{
   });
 });
 
-describe('addPlayer', ()=>{
+describe('addPlayers', ()=>{
   it('should be a function', ()=>{
-    assert.isFunction(addPlayer);
+    assert.isFunction(addPlayers);
   });
 });
