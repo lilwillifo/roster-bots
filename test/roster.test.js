@@ -28,6 +28,7 @@ describe("GET /api/v1/generate_team", () => {
 
 const makeRoster = require('../models/team.js').prototype.makeRoster;
 const addPlayers = require('../models/team.js').prototype.addPlayers;
+const Player = require('../models/player.js')
 const salaryCap = 175;
 const playerMax = 100;
 const teamSize = 15;
@@ -52,12 +53,21 @@ describe('makeRoster', ()=>{
   });
   it(`no single player totalScore can be greater than ${playerMax}`, ()=>{
     let playerScores = makeRoster();
-    playerScores.every(e=>assert.isAtMost(e, playerMax))
+    playerScores.every(e => assert.isAtMost(e, playerMax))
   });
 });
 
 describe('addPlayers', ()=>{
   it('should be a function', ()=>{
     assert.isFunction(addPlayers);
+  });
+  it('should output an array of Player objects', ()=>{
+    assert.isArray(addPlayers(makeRoster(), 'TEAMNAME'));
+    assert.lengthOf(addPlayers(makeRoster(), 'TEAMNAME'), teamSize)
+    expect(addPlayers(makeRoster(), 'TEAMNAME')).to.satisfy(function(players) {
+      return players.every(function(player) {
+          return player instanceof Player;
+      });
+    });
   });
 });

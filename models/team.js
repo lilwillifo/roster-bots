@@ -1,3 +1,4 @@
+const Player = require('./player.js')
 
 class Team {
  totalTeamScore() {
@@ -45,8 +46,12 @@ class Team {
     return roster;
   };
 
-  addPlayers(totalScore, teamName) {
+  addPlayers(allScores, teamName) {
     if (!teamName) teamName = "YAY";
+    let team = allScores.map(e => new Player(e, teamName))
+    return team
+    // create player objects with unique name based on score and teamname
+
 };
 
 }
