@@ -4,11 +4,15 @@ class Team {
  totalTeamScore() {
     return this.makeRoster().reduce((a, b) => a + b)
   }
- starters() {
-    return this.addPlayers(this.makeRoster()).slice(0, 10)
+ starters(num, teamSize) {
+   if (!teamSize || teamSize < 1) teamSize = 15;
+   if (!num || num >= teamSize) num = 10;
+    return this.addPlayers(this.makeRoster()).slice(0, num)
   }
- substitutes() {
-    return this.addPlayers(this.makeRoster()).slice(10, 15)
+ substitutes(num, teamSize) {
+   if (!teamSize || teamSize < 1) teamSize = 15;
+   if (!num || num >= teamSize) num = 5;
+    return this.addPlayers(this.makeRoster()).slice(teamSize - num, teamSize)
   }
 
   //value fixed for purposes of this assignment and its assumptions
