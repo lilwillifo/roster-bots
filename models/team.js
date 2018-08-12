@@ -48,10 +48,18 @@ class Team {
 
   addPlayers(allScores, teamName) {
     if (!teamName) teamName = "YAY";
-    let team = allScores.map(e => new Player(e, teamName))
+    let team = allScores.map(e => new Player(e, teamName));
+    // bubble sort to sort players by total scores
+    for (let i = team.length - 1; i >= 0; i--) {
+      for (let j = 1; j<= i; j++) {
+        if (team[j - 1].totalScore < team[j].totalScore) {
+          let temp = team[j - 1 ];
+          team[j - 1] = team[j];
+          team[j] = temp
+        }
+      }
+    }
     return team
-    // create player objects with unique name based on score and teamname
-
 };
 
 }
