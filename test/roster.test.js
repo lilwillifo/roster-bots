@@ -26,7 +26,7 @@ describe("GET /api/v1/generate_team", () => {
   })
 });
 
-const makeRoster = require('../js/rosterApp.js').makeRoster;
+const makeRoster = require('../models/team.js').prototype.makeRoster;
 const salaryCap = 175;
 const playerMax = 100;
 const teamSize = 15;
@@ -51,6 +51,12 @@ describe('makeRoster', ()=>{
   });
   it(`no single player totalScore can be greater than ${playerMax}`, ()=>{
     let playerScores = makeRoster();
-    playerScores.every(e=>assert.isAtMost(e, 100))
+    playerScores.every(e=>assert.isAtMost(e, playerMax))
+  });
+});
+
+describe('addPlayer', ()=>{
+  it('should be a function', ()=>{
+    assert.isFunction(addPlayer);
   });
 });
