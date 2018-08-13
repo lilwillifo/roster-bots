@@ -21,6 +21,12 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Roster Bots</h1>
         </header>
+        <h2 className="App-intro"> Congratulations, you are now the owner of a robot sports team. Each owner is responsible for creating a roster
+of player bots for league play. The league requires that your roster be filled out with 10 starters and 5
+substitutes. You must submit your roster before you can begin league play.
+The league has mandated that the total attribute score of each of your player bots can not exceed 100 points,
+and no two players can have the same score, otherwise your team is disqualified from league play.
+The league has also implemented a salary cap. Each teams roster can not exceed 175 points.</h2>
         <h2>Total Team Score: {this.state.score}</h2>
         <h3>Starters:</h3>
         <table>

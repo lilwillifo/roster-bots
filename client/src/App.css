@@ -4,8 +4,22 @@ body {
   background-color: #A98D90;
 }
 
+h1 {
+  color: #F48387;
+}
+
+h3 {
+  color: #383755;
+}
+
 table {
-  width: 100%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto
+}
+
+tr:nth-child(odd) {
+    background-color: #383755;
 }
 
 .App {
@@ -25,6 +39,7 @@ table {
 
 .App-intro {
   font-size: large;
+  padding: 20px;
 }
 
 @keyframes App-logo-spin {
