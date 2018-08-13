@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -20,18 +19,47 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Roster Bots</h1>
+          <h1 className="App-title">Roster Bots</h1>
         </header>
-        <p>Total Team Score: {this.state.score}</p>
-        <ul>Starters: {this.state.starters.map(player =>
-            <li key={player.name}>{player.name}: Total Score: {player.totalScore}</li>
-          )}
-        </ul>
-        <ul>Substitutes: {this.state.substitutes.map(player =>
-            <li key={player.name}>{player.name}: Total Score: {player.totalScore}</li>
-          )}
-        </ul>
+        <h2>Total Team Score: {this.state.score}</h2>
+        <h3>Starters:</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Speed</th>
+            <th>Strength</th>
+            <th>Agility</th>
+            <th>Total Score</th>
+          </tr>
+          {this.state.starters.map(player =>
+            <tr>
+              <td key={player.name}>{player.name}</td>
+              <td key={player.speed}>{player.speed}</td>
+              <td key={player.strength}>{player.strength}</td>
+              <td key={player.agility}>{player.agility}</td>
+              <td key={player.totalScore}>{player.totalScore}</td>
+            </tr>
+            )}
+        </table>
+        <h3>Substitutes:</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Speed</th>
+            <th>Strength</th>
+            <th>Agility</th>
+            <th>Total Score</th>
+          </tr>
+          {this.state.substitutes.map(player =>
+            <tr>
+              <td key={player.name}>{player.name}</td>
+              <td key={player.speed}>{player.speed}</td>
+              <td key={player.strength}>{player.strength}</td>
+              <td key={player.agility}>{player.agility}</td>
+              <td key={player.totalScore}>{player.totalScore}</td>
+            </tr>
+            )}
+        </table>
       </div>
     );
   }
