@@ -2,10 +2,6 @@ const Player = require('./player.js')
 
 class Team {
 
-  teamName(input) {
-    if (!input) input = "YAY";
-    return input
-  }
  totalTeamScore() {
     return this.makeRoster().reduce((a, b) => a + b)
   }
