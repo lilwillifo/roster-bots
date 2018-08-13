@@ -25,11 +25,11 @@ class App extends Component {
         </header>
         <p>Total Team Score: {this.state.score}</p>
         <ul>Starters: {this.state.starters.map(player =>
-            <li>{player.name}: Total Score: {player.totalScore}</li>
+            <li key={player.name}>{player.name}: Total Score: {player.totalScore}</li>
           )}
         </ul>
         <ul>Substitutes: {this.state.substitutes.map(player =>
-            <li>{player.name}: Total Score: {player.totalScore}</li>
+            <li key={player.name}>{player.name}: Total Score: {player.totalScore}</li>
           )}
         </ul>
       </div>
