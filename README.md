@@ -22,6 +22,7 @@ From there, I map over these scores to create Player objects. Player names must 
 
 ### Future Iterations
 In next steps, I'd like the user to have more choice in their team design. If they wanted their starters to be the top 10 agility players, rather than top 10 overall, I could update the sorting method I build to sort by that attribute instead of just the total attribute score. I'd also like to allow for user input in how many "throw-away" players they'd like. Currently, the team is built off of having 5 very low performing substitutes. It seems logical that someone may only want 1 or 2 low performers, or even none.
+Lastly - this is currently not saving teams anywhere. If I were to build more features around the league or game play, I'd want to save each Team instance and Player instance to a database.
 
 ## Getting Started
 
@@ -45,7 +46,7 @@ In next steps, I'd like the user to have more choice in their team design. If th
 5. Fire up your servers. We'll need both a backend and front end server running.
   From the project root directory:
     ```shell
-      npm start
+      nodemon bin/www
     ```
 
   Then in a separate tab:
