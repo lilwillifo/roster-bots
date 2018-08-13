@@ -1,6 +1,20 @@
 # Roster Bots
 
-<!-- Foodi allows users to track their eating habits and nutrition. Use the search bar to find calorie and nutrition information for any food. When logged in, you can enter the number of servings and save to your daily diary. Save time by selecting from your frequently eaten foods. Then head to the analytics page to see a nutritional breakdown. The deployed version can be found [here](https://foodi-tracker.herokuapp.com/). -->
+This code challenge uses Node and React to create an algorithm that builds robot sports team. The league requires that your roster be filled out with 10 starters and 5
+substitutes.
+Each player bot needs a name, and has three attribute scores associated with each:
+Speed
+Strength
+Agility
+The total sum of the speed, strength, and agility attributes is calculated as the "total attribute score" for each
+player bot.
+
+The league has mandated that the total attribute score of each of your player bots can not exceed 100 points,
+and no two players can have the same score, otherwise your team is disqualified from league play.
+The league has also implemented a salary cap. Each team's roster can not exceed 175 points.
+
+## The Algorithm
+
 
 ## Getting Started
 
@@ -32,66 +46,17 @@
     cd client
     npm start
   ```
-  6. Visit `http://localhost:3000/` to create your team!
-  7. If you'd like to see the raw JSON, visit http://localhost:3001/api/v1/generate_team
+6. Visit `http://localhost:3000/` to create your team!
 
+7. If you'd like to see the raw JSON, visit http://localhost:3001/api/v1/generate_team
 
-### Prerequisites
-
-<!-- You'll need [Django](https://www.djangoproject.com/) and [Python3](https://www.python.org/downloads/) installed -->
-
-
-## Contributing
-
-Please follow the Getting Started guide to set up your local dev environment.
-
-This guide assumes that the git remote name of the main repo is `upstream` and that your fork is named `origin`.
-
-Create a new branch on your local machine to make your changes against (based on `upstream/master`):
-
-    git checkout -b branch-name-here --no-track upstream/master
-
-Make sure the tests pass on your new branch:
-
-    `npm test`
-
-### Making a change
-
-Make your changes to the codebase. I recommend using TDD. Add a test, make changes and get the test suite back to green.
-
-Once the tests are passing you can commit your changes. See [How to Write a Good Commit Message](https://chris.beams.io/posts/git-commit/) for more tips.
-
-    git add .
-    git commit -m "Add a concise commit message describing your change here"
-
-Push your changes to a branch on your fork:
-
-    git push origin branch-name-here
-### Submitting a Pull Request
-
-Use the GitHub UI to submit a new pull request against upstream/master. To increase the chances that your pull request is swiftly accepted please have a look at this guide to [making a great pull request](https://www.atlassian.com/blog/git/written-unwritten-guide-pull-requests)
-
-TL;DR:
-* Write tests
-* Make sure the whole test suite is passing
-* Keep your PR small, with a single focus
-* Maintain a clean commit history
-* Use a style consistent with the rest of the codebase
-* Before submitting, [rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) on the current master branch
 ## Built With
 
-<!-- * [Django](https://www.djangoproject.com/) - Web Framework
-* [Plotly](https://plot.ly/feed/#/) - Building data visualization
-* [Django Rest Framework](http://www.django-rest-framework.org/) - Backend API to feed data to Plotly
-* [JQuery](https://jquery.com/) - Asynchronous loading of charts
-* [Bootstrap](https://getbootstrap.com/) - Bootstrap for styling
-* [Behave-Django](https://github.com/behave/behave-django) - Django package for BDD testing -->
+* [Express](https://expressjs.com/) - A Minimalist Web Framework for Node.js
+* [React](hhttps://reactjs.org/) - A JavaScript library for building user interfaces
+* [Mocha](https://mochajs.org/) - JavaScript test framework running on Node.js
 
 
 ## Authors
 
 * **Margaret Williford**
-
-## Acknowledgments
-
-<!-- * A huge shoutout to [Vitor Freitas](https://simpleisbetterthancomplex.com/). For nearly every Django issue I ran into, he had written a blog post to solve my problem. -->
