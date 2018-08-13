@@ -1,0 +1,48 @@
+body {
+  font-family: 'Futura';
+  color: #E8D3CF;
+  background-color: #A98D90;
+}
+
+h1 {
+  color: #F48387;
+}
+
+h3 {
+  color: #383755;
+}
+
+table {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto
+}
+
+tr:nth-child(odd) {
+    background-color: #383755;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #383755;
+  height: 150px;
+  padding: 20px;
+  color: #E8D3CF;
+}
+
+.App-title {
+  font-size: 3.0em;
+}
+
+.App-intro {
+  font-size: large;
+  padding: 20px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
